@@ -1,4 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Arima:wght@300;500&display=swap");
+:root {
+  --color-brown: #704616;
+  --color-light: #f1e6d8;
+}
 * {
-  color: #704616;
-  background-color: #f1e6d8;
+  color: var(--color-brown);
+  background-color: var(--color-light);
+  font-family: "Arima", cursive;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+#block {
+  margin: 1rem auto;
+  width: 80%;
+  border: 1px solid var(--color-brown);
+  padding: 2rem;
 }
