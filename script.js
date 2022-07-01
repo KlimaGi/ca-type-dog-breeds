@@ -1,16 +1,19 @@
 let blockEl = document.querySelector("#block");
+let formBlockEl = document.querySelector("#form-block");
 let randomDogBreedFormEl = document.querySelector("#random-dog-breed-form");
 let dogBreedsSelectEl = document.querySelector("#dog-breeds-select");
 let imgEl = document.createElement("img");
-imgEl.src = "";
+imgEl.classList.add("img-block");
 
 fetch("https://dog.ceo/api/breeds/list/all")
   .then((res) => res.json())
   .then((breeds) => {
-    // console.log(breeds.message);
-    let breedsArr = Object.keys(breeds.message);
+    console.log(breeds.message);
+    breedsObj = breeds.message;
+    let breedsKeys = Object.keys(breeds.message);
+
     //console.log(breedsArr);
-    breedsArr.map((breed) => {
+    breedsKeys.map((breed) => {
       let breedOptionEl = document.createElement("option");
       breedOptionEl.value = breed;
       breedOptionEl.textContent = "-- " + breed;
@@ -24,4 +27,12 @@ randomDogBreedFormEl.addEventListener("submit", (event) => {
   event.preventDefault();
   let breedSelected = event.target.elements["dog-breeds-select"].value;
   console.log(breedSelected);
+  fetch(`https://dog.ceo/api/breed/${breedSelected}/images/random`)
+    .then((res) => res.json())
+    .then((images) => {
+      // console.log(images);
+      // console.log(images.message);
+      imgEl.src = images.message;
+      formBlockEl.append(imgEl);
+    });
 });

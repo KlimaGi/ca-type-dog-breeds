@@ -17,3 +17,10 @@
   border: 1px solid var(--color-brown);
   padding: 2rem;
 }
+.title {
+  margin-bottom: 1rem;
+}
+.img-block {
+  height: 40rem;
+  margin-top: 2rem;
+}
