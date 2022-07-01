@@ -14,13 +14,15 @@
 #block {
   margin: 1rem auto;
   width: 80%;
-  border: 1px solid var(--color-brown);
   padding: 2rem;
+  text-align: center;
 }
 .title {
   margin-bottom: 1rem;
 }
+
 .img-block {
-  height: 40rem;
+  width: 30rem;
   margin-top: 2rem;
+  object-fit: contain;
 }
