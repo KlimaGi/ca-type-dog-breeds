@@ -1,5 +1,5 @@
 let blockEl = document.querySelector("#block");
-let randomDogBreedFormEl = document.querySelector("#random-dog-breed-form");
+let dogBreedFormEl = document.querySelector("#random-dog-breed-form");
 let dogBreedsSelectEl = document.querySelector("#dog-breeds-select");
 let imgEl = document.createElement("img");
 imgEl.classList.add("img-block");
@@ -31,7 +31,7 @@ fetch("https://dog.ceo/api/breeds/list/all")
     document.querySelector("#dog-breed-btn").removeAttribute("disabled");
   });
 
-randomDogBreedFormEl.addEventListener("submit", (event) => {
+dogBreedFormEl.addEventListener("submit", (event) => {
   event.preventDefault();
   let breedSelected = event.target.elements["dog-breeds-select"].value.replace(
     "-",
